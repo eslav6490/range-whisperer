@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4efe6;
+  --foreground: #13251f;
+  --muted: #617168;
+  --surface: rgba(255, 252, 247, 0.72);
+  --surface-strong: rgba(255, 252, 247, 0.92);
+  --line: rgba(19, 37, 31, 0.1);
+  --brand: #0f766e;
+  --brand-strong: #0c5d57;
+  --accent: #d97706;
+  --success: #166534;
+  --warning: #a16207;
+  --danger: #b91c1c;
+  --shadow: 0 24px 80px rgba(14, 33, 24, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--foreground);
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 95, 0.14), transparent 26%),
+    radial-gradient(circle at top right, rgba(217, 119, 6, 0.16), transparent 24%),
+    linear-gradient(180deg, #fbf8f2 0%, #f1eadf 48%, #ede4d5 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.serif {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+.shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.shell::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.18;
+  content: "";
+  pointer-events: none;
+}
+
+.section-card {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  background: rgba(15, 118, 110, 0.08);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-strong);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.grid-auto {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.pill-button {
+  border: 1px solid rgba(19, 37, 31, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--foreground);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.pill-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(15, 118, 110, 0.28);
+}
+
+.pill-button[data-active="true"] {
+  border-color: rgba(15, 118, 110, 0.4);
+  background: rgba(15, 118, 110, 0.14);
+  color: var(--brand-strong);
+}
+
+.metric-shadow {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 14px 30px rgba(16, 42, 31, 0.08);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table-wrap table {
+  min-width: 1200px;
+}
+
+.table-wrap th {
+  position: sticky;
+  top: 0;
+  background: rgba(251, 248, 242, 0.98);
+  backdrop-filter: blur(12px);
+}
+
+.chart-card {
+  min-height: 370px;
+}
+
+.legend-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+}
+
+.soft-callout {
+  border: 1px solid rgba(15, 118, 110, 0.14);
+  background: rgba(15, 118, 110, 0.08);
+}
+
+.warning-callout {
+  border: 1px solid rgba(217, 119, 6, 0.18);
+  background: rgba(217, 119, 6, 0.08);
+}
+
+.danger-callout {
+  border: 1px solid rgba(185, 28, 28, 0.16);
+  background: rgba(185, 28, 28, 0.07);
+}
