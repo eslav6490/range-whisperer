@@ -38,6 +38,9 @@ jobs:
       - name: Add custom domain CNAME
         run: echo "range-whisperer.evanslavik.com" > ./out/CNAME
 
+      - name: Disable Jekyll processing
+        run: touch ./out/.nojekyll
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
